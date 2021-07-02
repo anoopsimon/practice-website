@@ -36,3 +36,21 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+.fuzzy{
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0;
+  color:black
+  
+}
+
+.result {
+  margin-top: 25px;
+  width: 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -33,5 +33,25 @@
           "rating":3.9,
           "price":"54.00 AUD"
         }
-    ]
+    ],
+    "movies": [{
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    }, {
+      "id": 2,
+      "title": "F. Scott Fitzgerald",
+      "author": "Dan Brown"
+    },
+     {
+      "id": 3,
+      "title": "Angels & Demons",
+      "author": "Dan Brown"
+    },
+    {
+      "id": 4,
+      "title": "Titanic",
+      "author": "Unknown"
+    }
+  ]
 }
