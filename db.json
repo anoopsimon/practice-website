@@ -1,0 +1,37 @@
+{
+    "rentalHistory" :
+    [
+        {
+          "date":"02/07/1987",
+          "movie":"Seven",
+          "genre":"Crime",
+          "releaseDate":"02/07/2021",
+          "rating":3.6,
+          "price":"4.00 AUD"
+        },
+        {
+          "date":"02/07/1999",
+          "movie":"Titanic",
+          "genre":"Crime",
+          "releaseDate":"02/07/2021",
+          "rating":1.6,
+          "price":"4.00 AUD"
+        },
+        {
+          "date":"02/07/2001",
+          "movie":"Friends",
+          "genre":"Crime",
+          "releaseDate":"02/07/2021",
+          "rating":4.6,
+          "price":"14.00 AUD"
+        },
+        {
+          "date":"02/07/2013",
+          "movie":"Inception",
+          "genre":"Crime",
+          "releaseDate":"02/07/1999",
+          "rating":3.9,
+          "price":"54.00 AUD"
+        }
+    ]
+}
