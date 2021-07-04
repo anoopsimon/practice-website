@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import AuthenticationService from '../services/AuthenticationService';
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -9,6 +10,8 @@ export class NavMenu extends Component {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.logOut = this.logOut.bind(this);
+
     this.state = {
       collapsed: true,
       title:'Movie Rental'
@@ -19,6 +22,9 @@ export class NavMenu extends Component {
     this.setState({
       collapsed: !this.state.collapsed
     });
+  }
+  logOut() {
+    AuthenticationService.logout();
   }
 
   render () {
@@ -38,6 +44,9 @@ export class NavMenu extends Component {
                 </NavItem>
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/fetch-orders">My Rentals</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/login" onClick={this.logOut}>Logout</NavLink>
                 </NavItem>
               </ul>
             </Collapse>

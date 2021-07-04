@@ -51,6 +51,7 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/movies' component={Movies} />
         <Route path='/fetch-orders' component={Orders} />
+        <Route path='/login' component={Login} />
         </Switch>
       </Layout>
     );

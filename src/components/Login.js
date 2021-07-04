@@ -30,7 +30,7 @@ class Login extends Component
           loading: true
         });
         AuthenticationService.loginAs();
-        this.props.history.push("/fetch-orders");
+        this.props.history.push("/");
         window.location.reload();
 
     }
@@ -39,9 +39,8 @@ class Login extends Component
 
         return(
             <>
-                <Container>              
-                <Row style={{marginTop:'20%'}}>
-               
+     <Container>              
+      <Row style={{marginTop:'20%'}}>            
         <Col sm="12" md={{ size: 6, offset: 3 }}>
             <Form  onSubmit={this.handleLogin}>
             <FormGroup>
