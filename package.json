@@ -1,5 +1,6 @@
 {
   "name": "MovieRental",
+  "homepage": "http://anoopsimon.github.io/practicewebsite",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
