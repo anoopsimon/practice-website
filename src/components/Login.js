@@ -3,6 +3,10 @@ import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
 import AuthenticationService from "../services/AuthenticationService";
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle
+} from 'reactstrap';
 
 class Login extends Component {
   constructor(props) {
@@ -37,6 +41,7 @@ class Login extends Component {
         <Container>
           <Row style={{ marginTop: "20%" }}>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
+            <Card className="loginForm">
               <Form onSubmit={this.handleLogin}>
                 <FormGroup>
                   <Label for="exampleEmail">Email</Label>
@@ -58,6 +63,7 @@ class Login extends Component {
                 </FormGroup>
                 <Button>Submit</Button>
               </Form>
+              </Card>
             </Col>
           </Row>
         </Container>

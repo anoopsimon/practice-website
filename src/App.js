@@ -45,7 +45,7 @@ export default class App extends Component {
   }
 
   render () {
-    if(this.state.currentUser===undefined) return (<><p>User not logged in</p><Login></Login></>) ;
+    if(this.state.currentUser===undefined) return (<><Login></Login></>) ;
 
     return (
 

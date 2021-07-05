@@ -54,3 +54,10 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+
+.loginForm{
+  border-radius: 5%;
+  height:350px;
+  padding: 5%;
+  padding-top: 25%;
+}
