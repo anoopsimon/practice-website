@@ -48,8 +48,9 @@ class Login extends Component {
                   <Input
                     type="email"
                     name="email"
-                    id="exampleEmail"
+                    id="username"
                     placeholder="with a placeholder"
+                    aria-label="username or email"
                   />
                 </FormGroup>
                 <FormGroup>
@@ -57,11 +58,15 @@ class Login extends Component {
                   <Input
                     type="password"
                     name="password"
-                    id="examplePassword"
+                    id="pwd"
                     placeholder="password placeholder"
+                    aria-Label="password"
                   />
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button
+                id ="loginBtn"
+                aria-label="Login Button"
+                >Submit</Button>
               </Form>
               </Card>
             </Col>

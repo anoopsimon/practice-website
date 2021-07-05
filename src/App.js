@@ -16,11 +16,7 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
-    this.logOut = this.logOut.bind(this);
-
     this.state = {
-      // showModeratorBoard: false,
-      // showAdminBoard: false,
        currentUser: undefined,
     };
   }
@@ -30,18 +26,9 @@ export default class App extends Component {
 
     if (user) {
       this.setState({
-        currentUser: user,
-        // showModeratorBoard: user.roles.includes("ROLE_MODERATOR"),
-        // showAdminBoard: user.roles.includes("ROLE_ADMIN"),
+        currentUser: user,        
       });
     }
-  }
-
-  logOut() {
-    AuthenticationService.logout();
-   // this.props.history.push("/");
-   console.log('logout')
-    window.location.reload();
   }
 
   render () {
