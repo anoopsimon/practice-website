@@ -9,7 +9,7 @@ import {  Movies } from './components/Movies';
 import  Login  from './components/Login';
 
 import './custom.css'
-import AuthenticationService from './services/AuthenticationService';
+import AuthService from './services/AuthService';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -22,7 +22,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    const user = AuthenticationService.getCurrentUser();
+    const user = AuthService.getCurrentUser();
 
     if (user) {
       this.setState({

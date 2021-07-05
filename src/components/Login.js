@@ -2,11 +2,17 @@ import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
-import AuthenticationService from "../services/AuthenticationService";
+import FadeLoader from "react-spinners/FadeLoader";
+
+import AuthService from "../services/AuthService";
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle
-} from 'reactstrap';
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+} from "reactstrap";
 
 class Login extends Component {
   constructor(props) {
@@ -30,44 +36,64 @@ class Login extends Component {
       message: "",
       loading: true,
     });
-    AuthenticationService.loginAs();
+    AuthService.loginAs();
     this.props.history.push("/");
     window.location.reload();
   }
 
   render() {
+    if (this.state.loading)
+      return (
+        <div className="loader">
+          {" "}
+          <FadeLoader
+            color="#8C55AA"
+            loading={this.state.loading}
+            size={150}
+          ></FadeLoader>{" "}
+        </div>
+      );
+
     return (
       <>
         <Container>
           <Row style={{ marginTop: "20%" }}>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
-            <Card className="loginForm">
-              <Form onSubmit={this.handleLogin}>
-                <FormGroup>
-                  <Label for="exampleEmail">Email</Label>
-                  <Input
-                    type="email"
-                    name="email"
-                    id="username"
-                    placeholder="with a placeholder"
-                    aria-label="username or email"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="examplePassword">Password</Label>
-                  <Input
-                    type="password"
-                    name="password"
-                    id="pwd"
-                    placeholder="password placeholder"
-                    aria-Label="password"
-                  />
-                </FormGroup>
-                <Button
-                id ="loginBtn"
-                aria-label="Login Button"
-                >Submit</Button>
-              </Form>
+              <Card className="loginForm">
+              <p class="sign" align="center">Sign in</p>
+
+                <Form onSubmit={this.handleLogin}>
+                 
+                  <FormGroup>
+                    {/* <Label className ="sign" for="exampleEmail">Email</Label> */}
+                    <Input
+                      type="email"
+                      name="email"
+                      id="username"
+                      placeholder="Username"
+                      aria-label="username or email"
+                      className="un"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    {/* <Label className ="sign" for="examplePassword">Password</Label> */}
+                    <Input
+                      type="password"
+                      name="password"
+                      id="pwd"
+                      placeholder="Password"
+                      aria-label="password"
+                      className="un"
+                    />
+                  </FormGroup>
+                  <Button
+                    id="loginBtn"
+                    aria-label="Login Button"
+                    className="submit"
+                  >
+                    Submit
+                  </Button>
+                </Form>
               </Card>
             </Col>
           </Row>

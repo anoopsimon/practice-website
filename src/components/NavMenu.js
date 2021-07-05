@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import AuthenticationService from '../services/AuthenticationService';
+import AuthService from '../services/AuthService';
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -24,7 +24,7 @@ export class NavMenu extends Component {
     });
   }
   logOut() {
-    AuthenticationService.logout();
+    AuthService.logout();
     console.log('logout')
     window.location.reload();
   }
