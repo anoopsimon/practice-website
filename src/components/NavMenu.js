@@ -25,6 +25,8 @@ export class NavMenu extends Component {
   }
   logOut() {
     AuthenticationService.logout();
+    console.log('logout')
+    window.location.reload();
   }
 
   render () {

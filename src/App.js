@@ -39,6 +39,9 @@ export default class App extends Component {
 
   logOut() {
     AuthenticationService.logout();
+   // this.props.history.push("/");
+   console.log('logout')
+    window.location.reload();
   }
 
   render () {
