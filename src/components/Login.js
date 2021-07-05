@@ -94,6 +94,8 @@ class Login extends Component {
                     Submit
                   </Button>
                 </Form>
+                <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
+
               </Card>
             </Col>
           </Row>
