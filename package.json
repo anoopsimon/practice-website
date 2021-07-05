@@ -1,6 +1,6 @@
 {
   "name": "MovieRental",
-  "homepage": "http://anoopsimon.github.io/practicewebsite",
+  "homepage": "http://anoopsimon.github.io/practice-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,7 +42,9 @@
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/",
-    "api": "json-server --watch db.json --port 8081"
+    "api": "json-server --watch db.json --port 8081",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "browserslist": {
     "production": [
