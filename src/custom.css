@@ -3,6 +3,12 @@ a {
   color: #0366d6;
 }
 
+body, html { 
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+
+}
+
 code {
   color: #E01A76;
 }
