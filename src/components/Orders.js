@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import SyncLoader from "react-spinners/SyncLoader";
 import { Table } from 'reactstrap';
 import StarRatings from 'react-star-ratings';
-
+import {
+  Card, Button, CardImg, CardTitle, CardText, CardDeck,
+  CardSubtitle, CardBody
+} from 'reactstrap';
 
 
 export class Orders extends Component {
@@ -19,6 +22,7 @@ export class Orders extends Component {
 
   static renderForecastsTable(forecasts) {
     return (
+      <Card style={{borderRadius:'10px'}}>
       <Table  aria-labelledby="tabelLabel">
         <thead>
           <tr>
@@ -51,6 +55,7 @@ export class Orders extends Component {
           )}
         </tbody>
       </Table>
+      </Card>
     );
   }
 
@@ -62,7 +67,9 @@ export class Orders extends Component {
 
     return (
       <div>
-        <h1 id="tabelLabel" >{this.state.title}</h1>
+        {/* <h1 id="tabelLabel" >{this.state.title}</h1> */}
+        <h1 className="title">{this.state.title}</h1>    
+
         <p>Below is the list of movies you have rented in the past</p>
         {contents}
         

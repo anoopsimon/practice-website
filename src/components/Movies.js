@@ -14,7 +14,7 @@ export class Movies extends Component {
     super(props);
     this.state = { 
       currentCount: 0 ,
-      title:'Movies',
+      title:'Search Movies',
       movies:[],
       result:null
 
@@ -66,7 +66,7 @@ export class Movies extends Component {
   render() {
     return (
       <>
-        <h1>{this.state.title}</h1>    
+        <h1 className="title">{this.state.title}</h1>    
           <div className= "fuzzy">
        <FuzzySearch
       list={this.state.movies}
