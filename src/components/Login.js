@@ -54,7 +54,7 @@ class Login extends Component {
             <Col sm="12" md={{ size: 6, offset: 3 }}>
               <Card className="loginForm">
               <img alt="logo" src="logo.png"></img>
-              <p class="sign" align="center">Sign in</p>
+              <p className="sign" align="center">Sign in</p>
                 <Form onSubmit={this.handleLogin}>
                  
                   <FormGroup>

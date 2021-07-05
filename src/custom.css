@@ -105,6 +105,15 @@ html {
   font-size: 23px;
 }
 
+.title {
+  color: #8C55AA;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  text-align:center;
+  margin-top: 5%;
+}
+
 .un {
   width: 76%;
   color: rgb(38, 50, 56);
@@ -130,5 +139,7 @@ html {
     color: #E1BEE7;
     padding-top: 15px;
 }
+
+
   
 

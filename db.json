@@ -1,49 +1,50 @@
 {
-    "rentalHistory" :
-    [
-        {
-          "date":"02/07/1987",
-          "movie":"Seven",
-          "genre":"Crime",
-          "releaseDate":"02/07/2021",
-          "rating":3.6,
-          "price":"4.00 AUD"
-        },
-        {
-          "date":"02/07/1999",
-          "movie":"Titanic",
-          "genre":"Crime",
-          "releaseDate":"02/07/2021",
-          "rating":1.6,
-          "price":"4.00 AUD"
-        },
-        {
-          "date":"02/07/2001",
-          "movie":"Friends",
-          "genre":"Crime",
-          "releaseDate":"02/07/2021",
-          "rating":4.6,
-          "price":"14.00 AUD"
-        },
-        {
-          "date":"02/07/2013",
-          "movie":"Inception",
-          "genre":"Crime",
-          "releaseDate":"02/07/1999",
-          "rating":3.9,
-          "price":"54.00 AUD"
-        }
-    ],
-    "movies": [{
+  "rentalHistory": [
+    {
+      "date": "02/07/1987",
+      "movie": "Seven",
+      "genre": "Crime",
+      "releaseDate": "02/07/2021",
+      "rating": 3.6,
+      "price": "4.00 AUD"
+    },
+    {
+      "date": "02/07/1999",
+      "movie": "Titanic",
+      "genre": "Crime",
+      "releaseDate": "02/07/2021",
+      "rating": 1.6,
+      "price": "4.00 AUD"
+    },
+    {
+      "date": "02/07/2001",
+      "movie": "Friends",
+      "genre": "Crime",
+      "releaseDate": "02/07/2021",
+      "rating": 4.6,
+      "price": "14.00 AUD"
+    },
+    {
+      "date": "02/07/2013",
+      "movie": "Inception",
+      "genre": "Crime",
+      "releaseDate": "02/07/1999",
+      "rating": 3.9,
+      "price": "54.00 AUD"
+    }
+  ],
+  "movies": [
+    {
       "id": 1,
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald"
-    }, {
+    },
+    {
       "id": 2,
       "title": "F. Scott Fitzgerald",
       "author": "Dan Brown"
     },
-     {
+    {
       "id": 3,
       "title": "Angels & Demons",
       "author": "Dan Brown"
@@ -52,6 +53,27 @@
       "id": 4,
       "title": "Titanic",
       "author": "Unknown"
+    }
+  ],
+  "suggestions": [
+    {
+       "name": "Scoobi",
+       "genre":"Family, Animation, Adventure",
+       "image":"movie_scoobi.jpg",
+       "description":"Emancipation of One Harley Quinn), Harley Quinn joins superheroes Black Canary, Huntress and Renee Montoya to save a young girl from an evil crime lord in Gotham City."
+     },
+     
+    {
+      "name": "Wonder woman 1984",
+      "genre":"Action",
+      "image":"movie_wm.jpg",
+      "description":"Gal Gadot returns as Wonder Woman"
+    },
+    {
+      "name": "Magic Light 7",
+      "genre":"Family, Animation, Adventure",
+      "image":"movie_cartoon.jpg",
+      "description":"The Highway Rat, Zog, Room on a Broom, Stickman and The Highway Rat."
     }
   ]
 }
