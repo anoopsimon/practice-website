@@ -80,7 +80,7 @@ class Login extends Component {
                   <Button
                     id="loginBtn"
                     aria-label="Login Button"
-                    className="submit"
+                    className="styledButton"
                   >
                     Submit
                   </Button>

@@ -37,7 +37,7 @@ export class Home extends Component {
           <CardTitle tag="h5">{movie.name}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{movie.genre}</CardSubtitle>
           <CardText>{movie.description}</CardText>
-          <Button>Button</Button>
+          <Button className="styledButton">Buy Or Rent</Button>
         </CardBody>
       </Card>
         

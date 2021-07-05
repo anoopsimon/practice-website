@@ -1,6 +1,7 @@
 import { any } from 'prop-types';
 import React, { Component } from 'react';
  import FuzzySearch from 'react-fuzzy'
+
  import {
   Card, Button, CardImg, CardTitle, CardText, CardDeck,
   CardSubtitle, CardBody
@@ -25,6 +26,8 @@ export class Movies extends Component {
 
   componentDidMount() {
     this.getMovieList();
+    //document.getElementById('fuzzyTextbox').removeAttribute("style");
+
   }
 
   async getMovieList() {
@@ -47,14 +50,14 @@ export class Movies extends Component {
 
    result() {
     return (
-    <Card className="result">
-    <CardImg top width="0%" src="/img_titanic.jpg" alt="Card image cap" />
+    <Card className="result sr">
+    <CardImg top width="0%" height ="480px" src="/img_titanic.jpg" alt="Card image cap" />
     <CardBody>
       <CardTitle tag="h5">Titanic</CardTitle>
       <CardSubtitle tag="h6" className="mb-2 text-muted">126 wins & 83 nominations total
 </CardSubtitle>
       <CardText>Titanic: Directed by James Cameron. With Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates. A seventeen-year-old aristocrat falls in love with a kind </CardText>
-      <Button>Buy</Button>
+      <Button className="styledButton">Buy</Button>
     </CardBody>
   </Card>
     )
@@ -63,16 +66,18 @@ export class Movies extends Component {
   render() {
     return (
       <>
-        <h1>{this.state.title}</h1>      
+        <h1>{this.state.title}</h1>    
+          <div className= "fuzzy">
        <FuzzySearch
       list={this.state.movies}
       keys={['author', 'title']}
-      className="fuzzy"
       width={430}
-      style= {{marginLeft:'50px'}}
-      onSelect={(newSelectedItem) => {this.handleOnSearch(newSelectedItem)
-      }}
+      style={{all: 'unset'}}
+      onSelect={(newSelectedItem) => {this.handleOnSearch(newSelectedItem)  }}
+      className="fuzzy"
+
     />
+    </div>
 
     {this.state.result === null ? <p> </p>: this.result()}
       </>
