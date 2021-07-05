@@ -72,9 +72,8 @@ html {
 .loader
 {
   position: absolute;
-   color: White;
   top: 50%;
-  left: 45%;
+  left: 50%;
 }
 
 .submit {

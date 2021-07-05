@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
-import FadeLoader from "react-spinners/FadeLoader";
+import Spinner from "./Spinner";
 
 import AuthService from "../services/AuthService";
 import {
@@ -44,15 +44,8 @@ class Login extends Component {
   render() {
     if (this.state.loading)
       return (
-        <div className="loader">
-          {" "}
-          <FadeLoader
-            color="#8C55AA"
-            loading={this.state.loading}
-            size={150}
-          ></FadeLoader>{" "}
-        </div>
-      );
+        <Spinner loading={this.state.loading}/>
+             );
 
     return (
       <>
