@@ -53,12 +53,11 @@ class Login extends Component {
           <Row style={{ marginTop: "20%" }}>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
               <Card className="loginForm">
+              <img alt="logo" src="logo.png"></img>
               <p class="sign" align="center">Sign in</p>
-
                 <Form onSubmit={this.handleLogin}>
                  
                   <FormGroup>
-                    {/* <Label className ="sign" for="exampleEmail">Email</Label> */}
                     <Input
                       type="email"
                       name="email"
@@ -69,7 +68,6 @@ class Login extends Component {
                     />
                   </FormGroup>
                   <FormGroup>
-                    {/* <Label className ="sign" for="examplePassword">Password</Label> */}
                     <Input
                       type="password"
                       name="password"
