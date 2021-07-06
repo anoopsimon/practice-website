@@ -1,4 +1,3 @@
-import { any } from "prop-types";
 import React, { Component } from "react";
 import FuzzySearch from "react-fuzzy";
 
