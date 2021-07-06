@@ -1,11 +1,11 @@
 
-const API_URL = "http://localhost:8081/";
+const API_URL = process.env.REACT_APP_MOVIES_SERVICE_URL ;
 
 class MoviesService {
  
   async getSuggestions()
   {
-   const response =  await fetch(API_URL+'suggestions');
+   const response =  await fetch(API_URL +'suggestions');
    return await response.json();
  };
 

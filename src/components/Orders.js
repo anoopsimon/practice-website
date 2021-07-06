@@ -78,7 +78,7 @@ export class Orders extends Component {
   }
 
   async populateWeatherData() {
-    const response = await fetch('http://localhost:8081/rentalHistory');
+    const response = await fetch(process.env.REACT_APP_MOVIES_SERVICE_URL + 'rentalHistory');
     const data = await response.json();
     this.setState({ forecasts: data, loading: false });
   }

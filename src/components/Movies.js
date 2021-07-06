@@ -7,6 +7,8 @@ import React, { Component } from 'react';
   CardSubtitle, CardBody
 } from 'reactstrap';
 
+const API_URL = process.env.REACT_APP_MOVIES_SERVICE_URL ;
+
 export class Movies extends Component {
   static displayName = Movies.name;
 
@@ -31,7 +33,7 @@ export class Movies extends Component {
   }
 
   async getMovieList() {
-    const response = await fetch('http://localhost:8081/movies');
+    const response = await fetch(API_URL+'movies');
     const data = await response.json();
     this.setState({ movies: data, loading: false });
   }
