@@ -6,6 +6,7 @@ import {
   Card, Button, CardImg, CardTitle, CardText, CardDeck,
   CardSubtitle, CardBody
 } from 'reactstrap';
+import Spinner from './Spinner';
 
 
 export class Orders extends Component {
@@ -17,7 +18,7 @@ export class Orders extends Component {
   }
 
   componentDidMount() {
-    this.populateWeatherData();
+    this.populateRentalHistory();
   }
 
   static renderForecastsTable(forecasts) {
@@ -61,7 +62,7 @@ export class Orders extends Component {
 
   render() {
     let contents = this.state.loading
-      ?       <SyncLoader color={this.state.color} loading={this.state.loading}  size={10} />
+      ?       <Spinner />
 
       : Orders.renderForecastsTable(this.state.forecasts);
 
@@ -77,7 +78,7 @@ export class Orders extends Component {
     );
   }
 
-  async populateWeatherData() {
+  async populateRentalHistory() {
     const response = await fetch(process.env.REACT_APP_MOVIES_SERVICE_URL + 'rentalHistory');
     const data = await response.json();
     this.setState({ forecasts: data, loading: false });
