@@ -35,7 +35,7 @@ export class Home extends Component {
         <CardDeck>
         {this.state.movies.map(movie => 
         
-        <Card style={{width:'350px',height:'450px',marginTop:'5%'}}>
+        <Card style={{width:'350px',height:'400px',marginTop:'3%'}}>
         <CardImg top src={movie.image} alt="Card image cap" />
         <CardBody>
           <CardTitle tag="h5">{movie.name}</CardTitle>
