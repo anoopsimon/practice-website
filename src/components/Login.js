@@ -5,15 +5,7 @@ import { withRouter } from "react-router";
 import Spinner from "./Spinner";
 
 import AuthService from "../services/AuthService";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-} from "reactstrap";
-
+import {Card} from "reactstrap";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +23,6 @@ class Login extends Component {
 
   handleLogin(e) {
     e.preventDefault();
-    console.log("Invoke login");
     this.setState({
       message: "",
       loading: true,

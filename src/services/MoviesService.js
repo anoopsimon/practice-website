@@ -10,6 +10,11 @@ class MoviesService {
     const response = await fetch(API_URL + "rentalHistory");
     return await response.json();
   }
+
+  async getMovieList() {
+    const response = await fetch(API_URL + "movies");
+    return await response.json();
+  }
 }
 
 export default new MoviesService();
