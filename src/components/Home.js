@@ -4,6 +4,7 @@ import {
   CardTitle, CardSubtitle, Button,CardDeck
 } from 'reactstrap';
 import MoviesService from "../services/MoviesService";
+import Spinner from "./Spinner";
 export class Home extends Component {
   static displayName = Home.name;
 
@@ -11,17 +12,20 @@ export class Home extends Component {
     super(props);
     this.state =
     {
-      movies : []
+      movies : [],
+      loading:true
     };
   }
 
   async componentDidMount() {
     this.setState({
-      movies: await MoviesService.getSuggestions()
+      movies: await MoviesService.getSuggestions(),
+      loading:false
     });
   }
 
   render() {
+    if(this.state.loading) return(<Spinner></Spinner>)
     return (
       <div>
         <h1 className="title">
