@@ -12,7 +12,7 @@ export default class Spinner extends Component {
     super(props);
     this.state = {
         color:'#8C55AA',
-        size:200
+        size:600
     };
   }
 
@@ -20,11 +20,12 @@ export default class Spinner extends Component {
     return (
       <>
         <div className="loader">
-          <FadeLoader
+                    <FadeLoader
             color={this.state.color}
             loading={this.props.loading}
             size={this.state.size}
           ></FadeLoader>
+        
         </div>
       </>
     );
