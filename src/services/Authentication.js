@@ -11,7 +11,7 @@ const headers = {
 const KEYS_USER="user";
 const KEYS_TOKEN="token";
 
-class AuthService {
+class Authentication {
   
   /**
    * Creates a user
@@ -57,11 +57,8 @@ class AuthService {
             JSON.stringify(response.data.accessToken)
           );
         }
-        return true;
-      }).catch(error => {
-        console.log('login failed'+ error.response.data.error)
-        return false;
-     });
+        return response.data;
+      });
   }
 
   /**
@@ -126,4 +123,4 @@ class AuthService {
 
 
 
-export default new AuthService();
+export default new Authentication();

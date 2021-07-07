@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup,  Input} from "reactstrap";
+import { Button, Form, FormGroup,  Input,UncontrolledAlert  } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
 import Spinner from "./Spinner";
@@ -9,35 +9,48 @@ import {Card} from "reactstrap";
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.handleLogin = this.handleLogin.bind(this);
-    // this.onChangeUsername = this.onChangeUsername.bind(this);
-    // this.onChangePassword = this.onChangePassword.bind(this);
-
-    this.state = {
+      this.state = {
       username: "",
       password: "",
       loading: false,
-      message: "",
+      error:false,
+      loginErrorMessage:'Invalid Username or Password'
     };
   }
 
-  async handleLogin(e) {
+   handleLogin = async(e) => {
     e.preventDefault();
     this.setState({
-      message: "",
       loading: true,
     });
     //await AuthService.createUser('admin@mvrental.com','admin');
-    await AuthService.login('admin@mvrental.com','admin');
-    this.props.history.push("/");
-    window.location.reload();
+    //await AuthService.createUser(this.state.username,this.state.password);
+    var loginStatus = await AuthService.login(this.state.username,this.state.password);
+    if(loginStatus)
+    {
+      this.props.history.push("/");
+      window.location.reload();
+      return;
+    }
+    this.setState({
+      loading: false,
+      error:true
+    });
+  }
+
+  onChangeUsername=(e)=>{
+    this.setState({
+      username: e.target.value,
+    });
+  }
+  onChangePassword=(e)=>{
+    this.setState({
+      password: e.target.value,
+    });
   }
 
   render() {
-    if (this.state.loading)
-      return (
-        <Spinner loading={this.state.loading}/>
-             );
+    if (this.state.loading) return (<Spinner loading={this.state.loading}/>);
 
     return (
       <>
@@ -57,6 +70,7 @@ class Login extends Component {
                       placeholder="Username"
                       aria-label="username or email"
                       className="un"
+                      onChange={this.onChangeUsername}
                     />
                   </FormGroup>
                   <FormGroup>
@@ -67,6 +81,7 @@ class Login extends Component {
                       placeholder="Password"
                       aria-label="password"
                       className="un"
+                      onChange={this.onChangePassword}
                     />
                   </FormGroup>
                   <Button
@@ -76,8 +91,10 @@ class Login extends Component {
                   >
                     Submit
                   </Button>
+
                 </Form>
                 <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
+                {this.state.error? <UncontrolledAlert  fade={true} style={{textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.loginErrorMessage}</UncontrolledAlert >:''}
 
               </Card>
             </Col>
