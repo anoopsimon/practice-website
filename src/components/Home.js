@@ -32,7 +32,6 @@ export class Home extends Component {
 
 
     const movieSuggestions = this.shuffleMovies(this.state.movies).map((movie,key) => 
-        <div>
     <Card key={key} style={{width:'350px',height:'400px',marginTop:'3%'}}>
     <CardImg top src={movie.image} alt="Card image cap" />
     <CardBody>
@@ -42,7 +41,6 @@ export class Home extends Component {
       <Button className="styledButton">Buy Or Rent</Button>
     </CardBody>
   </Card>
-  </div>
     
     ) ;
     return (

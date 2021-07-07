@@ -44,6 +44,11 @@ class AuthService {
    * @returns 
    */
   async login(email, password) {
+    const loginResponse={
+      error:null,
+      success:false,
+      statusCode:0
+    };
     return await axios
       .post(API_URL + "login", {
         email,
@@ -57,10 +62,17 @@ class AuthService {
             JSON.stringify(response.data.accessToken)
           );
         }
-        return true;
+        loginResponse.success=true;
+        loginResponse.statusCode=response.status;
+        return loginResponse;
       }).catch(error => {
-        console.log('login failed'+ error.response.data.error)
-        return false;
+        //"Incorrect password"
+        console.log('login failed due to :'+ error.response.data)
+        loginResponse.error=error.response.data;
+        loginResponse.success=false;
+        loginResponse.statusCode= error.response.status;
+
+        return loginResponse;
      });
   }
 

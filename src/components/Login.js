@@ -14,7 +14,8 @@ class Login extends Component {
       password: "",
       loading: false,
       error:false,
-      loginErrorMessage:'Invalid Username or Password'
+      //loginErrorMessage:'Invalid Username or Password',
+      message:''
 
     };
   }
@@ -26,7 +27,7 @@ class Login extends Component {
     });
     //await AuthService.createUser(this.state.username,this.state.password);
     var loginStatus = await AuthService.login(this.state.username,this.state.password);
-    if(loginStatus)
+    if(loginStatus.success)
     {
       this.props.history.push("/");
       window.location.reload();
@@ -34,7 +35,8 @@ class Login extends Component {
     }
     this.setState({
       loading: false,
-      error:true
+      error:true,
+      message:loginStatus.error
     });
   }
 
@@ -49,6 +51,13 @@ class Login extends Component {
     });
   }
 
+ renderLoginErrors= (error) => {
+  const view= this.state.error? <UncontrolledAlert  fade={true} style={{marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.message}</UncontrolledAlert >:''
+
+   return(<div>
+    <p>{view}</p>
+  </div>);
+ }
   render() {
     if (this.state.loading) return (<Spinner loading={this.state.loading}/>);
 
@@ -94,8 +103,7 @@ class Login extends Component {
 
                 </Form>
                 <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
-                {this.state.error? <UncontrolledAlert  fade={true} style={{marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.loginErrorMessage}</UncontrolledAlert >:''}
-
+                {this.renderLoginErrors(this.state.error)}
               </Card>
             </Col>
           </Row>
