@@ -57,23 +57,43 @@
   ],
   "suggestions": [
     {
-       "name": "Scoobi",
-       "genre":"Family, Animation, Adventure",
-       "image":"movie_scoobi.jpg",
-       "description":"Emancipation of One Harley Quinn), Harley Quinn joins superheroes Black Canary, Huntress and Renee Montoya to save a young girl from an evil crime lord in Gotham City."
-     },
-     
+      "name": "Scoobi",
+      "genre": "Family, Animation, Adventure",
+      "image": "movie_scoobi.jpg",
+      "description": "Emancipation of One Harley Quinn), Harley Quinn joins superheroes Black Canary, Huntress and Renee Montoya to save a young girl from an evil crime lord in Gotham City."
+    },
     {
       "name": "Wonder woman 1984",
-      "genre":"Action",
-      "image":"movie_wm.jpg",
-      "description":"Gal Gadot returns as Wonder Woman"
+      "genre": "Action",
+      "image": "movie_wm.jpg",
+      "description": "Gal Gadot returns as Wonder Woman"
     },
     {
       "name": "Magic Light 7",
-      "genre":"Family, Animation, Adventure",
-      "image":"movie_cartoon.jpg",
-      "description":"The Highway Rat, Zog, Room on a Broom, Stickman and The Highway Rat."
+      "genre": "Family, Animation, Adventure",
+      "image": "movie_cartoon.jpg",
+      "description": "The Highway Rat, Zog, Room on a Broom, Stickman and The Highway Rat."
+    }
+  ],
+  "users": [
+    {
+      "email": "",
+      "pwd": ""
+    },
+    {
+      "pwd": "simon",
+      "email": "anoop",
+      "id": 1
+    },
+    {
+      "pwd": "simon",
+      "email": "anoop",
+      "id": "asd"
+    },
+    {
+      "pwd": "simon",
+      "email": "anoop",
+      "id": "8e8e7ecf-b707-4d36-8aa9-cd58ceaa8aa2"
     }
   ]
 }

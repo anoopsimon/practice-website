@@ -21,13 +21,14 @@ class Login extends Component {
     };
   }
 
-  handleLogin(e) {
+  async handleLogin(e) {
     e.preventDefault();
     this.setState({
       message: "",
       loading: true,
     });
-    AuthService.loginAs();
+    //AuthService.loginAs();
+    await AuthService.createUser('anoopsimon@gmail.com','simon');
     this.props.history.push("/");
     window.location.reload();
   }
