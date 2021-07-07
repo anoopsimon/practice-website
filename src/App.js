@@ -16,21 +16,25 @@ export default class App extends Component {
     super(props);
     this.state = {
        currentUser: undefined,
+       sessionExpired:true
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const user = AuthService.getCurrentUser();
+    const sessionExpired = await AuthService.isSessionExpired();
 
     if (user) {
       this.setState({
-        currentUser: user,        
+        currentUser: user,  
+        sessionExpired:sessionExpired      
       });
     }
   }
 
   render () {
-    if(this.state.currentUser===undefined) return (<><Login></Login></>) ;
+    //if(this.state.currentUser === undefined) return (<><Login></Login></>) ;
+    if(this.state.sessionExpired) return (<><Login></Login></>) ;
 
     return (
 
