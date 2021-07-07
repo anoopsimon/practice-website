@@ -28,7 +28,8 @@ class Login extends Component {
       loading: true,
     });
     //AuthService.loginAs();
-    await AuthService.createUser('anoopsimon@gmail.com','simon');
+    //await AuthService.createUser('admin@mvrental.com','admin');
+    await AuthService.login('admin@mvrental.com','admin');
     this.props.history.push("/");
     window.location.reload();
   }
