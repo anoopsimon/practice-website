@@ -15,6 +15,7 @@ class Login extends Component {
       loading: false,
       error:false,
       loginErrorMessage:'Invalid Username or Password'
+
     };
   }
 
@@ -23,7 +24,6 @@ class Login extends Component {
     this.setState({
       loading: true,
     });
-    //await AuthService.createUser('admin@mvrental.com','admin');
     //await AuthService.createUser(this.state.username,this.state.password);
     var loginStatus = await AuthService.login(this.state.username,this.state.password);
     if(loginStatus)
@@ -94,7 +94,7 @@ class Login extends Component {
 
                 </Form>
                 <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
-                {this.state.error? <UncontrolledAlert  fade={true} style={{textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.loginErrorMessage}</UncontrolledAlert >:''}
+                {this.state.error? <UncontrolledAlert  fade={true} style={{marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.loginErrorMessage}</UncontrolledAlert >:''}
 
               </Card>
             </Col>
