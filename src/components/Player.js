@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 import QierPlayer from 'qier-player';
-
-import {
-  Card,
-  Button,
-  CardImg,
-  CardTitle,
-  CardText,
-  CardSubtitle,
-  CardBody,
-} from "reactstrap";
+import { UncontrolledAlert } from 'reactstrap';
 
 export class Player extends Component {
   static displayName = Player.name;
@@ -52,6 +43,10 @@ export class Player extends Component {
     return (
       <>
         <h1 className="title">{this.state.title}</h1>
+        <UncontrolledAlert color="info" fade={false}>
+        This feature is currently work in progress ..
+      </UncontrolledAlert>
+
         <div style={{marginLeft:'auto',marginRight:'auto'}}>
         <QierPlayer style= {{margin:'auto'}} srcOrigin="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4" />
         </div>
