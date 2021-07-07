@@ -7,20 +7,7 @@ const headers = {
 };
 
 class AuthService {
-  loginAs() {
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        token:
-          "ey78788788787asd78asd78sa7d8s7d8a7sd88d7s8a7d8as7d87sd87ad87djkdhkjdhjsadhsa9d8y7s9d78sd789asdsajkdhsajkdh",
-      })
-    );
-    setTimeout(() => {
-      console.log("wait!!!!!");
-    }, 10000);
-    return true;
-  }
-
+  
   /**
    * Creates a user
    * @param {*} username 
@@ -70,9 +57,16 @@ class AuthService {
       });
   }
 
-  logout() {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
+  async logout() {
+    await this.clearFromLocalStorage(["user","token"]);
+  }
+
+  async clearFromLocalStorage(keys)
+  {
+    await keys.map( (key,index) => (
+      console.log("deleting " + key),
+      localStorage.removeItem(key)
+     )); 
   }
 
   register(username, email, password) {

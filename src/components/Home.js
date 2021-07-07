@@ -33,9 +33,9 @@ export class Home extends Component {
           BLU-RAY, DVD & DIGITAL
         </h1>
         <CardDeck>
-        {this.state.movies.map(movie => 
+        {this.state.movies.map((movie,key) => 
         
-        <Card style={{width:'350px',height:'400px',marginTop:'3%'}}>
+        <Card key={key} style={{width:'350px',height:'400px',marginTop:'3%'}}>
         <CardImg top src={movie.image} alt="Card image cap" />
         <CardBody>
           <CardTitle tag="h5">{movie.name}</CardTitle>

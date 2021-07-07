@@ -27,7 +27,6 @@ class Login extends Component {
       message: "",
       loading: true,
     });
-    //AuthService.loginAs();
     //await AuthService.createUser('admin@mvrental.com','admin');
     await AuthService.login('admin@mvrental.com','admin');
     this.props.history.push("/");

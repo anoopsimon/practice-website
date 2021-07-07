@@ -23,9 +23,8 @@ export class NavMenu extends Component {
       collapsed: !this.state.collapsed
     });
   }
-  logOut() {
-    AuthService.logout();
-    console.log('logout')
+  async logOut() {
+    await AuthService.logout();
     window.location.reload();
   }
 
