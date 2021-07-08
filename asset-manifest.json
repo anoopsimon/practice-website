@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/practice-website/static/css/main.29500195.chunk.css",
-    "main.js": "/practice-website/static/js/main.c4fa0675.chunk.js",
-    "main.js.map": "/practice-website/static/js/main.c4fa0675.chunk.js.map",
+    "main.js": "/practice-website/static/js/main.bdf194c0.chunk.js",
+    "main.js.map": "/practice-website/static/js/main.bdf194c0.chunk.js.map",
     "runtime-main.js": "/practice-website/static/js/runtime-main.13ca5fa3.js",
     "runtime-main.js.map": "/practice-website/static/js/runtime-main.13ca5fa3.js.map",
     "static/css/2.23fea534.chunk.css": "/practice-website/static/css/2.23fea534.chunk.css",
     "static/js/2.cb252e87.chunk.js": "/practice-website/static/js/2.cb252e87.chunk.js",
     "static/js/2.cb252e87.chunk.js.map": "/practice-website/static/js/2.cb252e87.chunk.js.map",
     "index.html": "/practice-website/index.html",
-    "precache-manifest.371cbd4fb9a12ed68a726678606e5bde.js": "/practice-website/precache-manifest.371cbd4fb9a12ed68a726678606e5bde.js",
+    "precache-manifest.e3a95e5ad84fb4fbc8eb626f3b221e4f.js": "/practice-website/precache-manifest.e3a95e5ad84fb4fbc8eb626f3b221e4f.js",
     "service-worker.js": "/practice-website/service-worker.js",
     "static/css/2.23fea534.chunk.css.map": "/practice-website/static/css/2.23fea534.chunk.css.map",
     "static/css/main.29500195.chunk.css.map": "/practice-website/static/css/main.29500195.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.23fea534.chunk.css",
     "static/js/2.cb252e87.chunk.js",
     "static/css/main.29500195.chunk.css",
-    "static/js/main.c4fa0675.chunk.js"
+    "static/js/main.bdf194c0.chunk.js"
   ]
 }
