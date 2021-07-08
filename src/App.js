@@ -8,6 +8,7 @@ import  Login  from './components/Login';
 import './custom.css'
 import AuthService from './services/AuthService';
 import { Player } from './components/Player';
+import Signup from './components/Signup';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -45,6 +46,7 @@ export default class App extends Component {
         <Route path='/fetch-orders' component={Orders} />
         <Route path='/login' component={Login} />
         <Route path='/player' component={Player} />
+        <Route path='/signup' component={Signup} />
         </Switch>
       </Layout>
     );
