@@ -19,6 +19,11 @@ class AuthService {
    * @param {*} password 
    */
   async createUser(username, password) {
+    const registrationResponse={
+      error:null,
+      success:false,
+      statusCode:0
+    };
     await axios
       .post(
         API_URL + "users",
@@ -30,11 +35,16 @@ class AuthService {
         headers
       )
       .then((resp) => {
-        console.log(resp.data);
+        registrationResponse.success=true;        
       })
       .catch((error) => {
         console.log(error);
-      });  
+        registrationResponse.error = error.response.data;
+        registrationResponse.success = false;
+        registrationResponse.statusCode= error.response.status;
+      });
+      
+      return registrationResponse;
   }
 
   /**

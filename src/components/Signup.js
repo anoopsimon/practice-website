@@ -21,24 +21,42 @@ class Signup extends Component {
     };
   }
 
-   handleLogin = async(e) => {
-    // e.preventDefault();
-    // this.setState({
-    //   loading: true,
-    // });
-    // //await AuthService.createUser(this.state.username,this.state.password);
-    // var loginStatus = await AuthService.login(this.state.username,this.state.password);
-    // if(loginStatus.success)
-    // {
-    //   this.props.history.push("/");
-    //   window.location.reload();
-    //   return;
-    // }
-    // this.setState({
-    //   loading: false,
-    //   error:true,
-    //   message:loginStatus.error
-    // });
+  renderLoginErrors= (error) => {
+    const view= error? <UncontrolledAlert  fade={true} style={{marginLeft:'20%',marginTop:'15%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.message}</UncontrolledAlert >:''
+  
+     return(<div>
+      <p>{view}</p>
+    </div>);
+   }
+
+   handleRegistration = async(e) => {
+    e.preventDefault();
+
+    if (this.state.password !== this.state.confirmPassword) 
+    {
+      this.setState({
+       message:'password mismatch !',
+       error:true
+      });
+
+      return;
+    }
+    this.setState({
+      loading: true,
+    });
+    var registrationStatus = await AuthService.createUser(this.state.username,this.state.password);
+    //var loginStatus = await AuthService.login(this.state.username,this.state.password);
+    if(registrationStatus.success)
+    {
+      this.props.history.push("/");
+      window.location.reload();
+      return;
+    }
+    this.setState({
+      loading: false,
+      error:true,
+      message:registrationStatus.error
+    });
   }
 
   onChangeUsername=(e)=>{
@@ -67,7 +85,7 @@ class Signup extends Component {
           
               <Card style={{border:'none'}}>
               <img alt="logo" src="logo.png" style={{width:'50%',alignSelf:'center',paddingBottom:'2%'}}></img>
-                <Form onSubmit={this.handleLogin}>
+                <Form onSubmit={this.handleRegistration}>
                  
                   <FormGroup>
                     <Input
@@ -106,11 +124,16 @@ class Signup extends Component {
                     id="loginBtn"
                     aria-label="Login Button"
                     className="styledButton"
+                    
+
                   >
                     Sign up
                   </Button>
 
+
                 </Form>
+                {this.renderLoginErrors(this.state.error)}
+
               </Card>
          
         </Container>
