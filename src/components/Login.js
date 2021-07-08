@@ -52,7 +52,7 @@ class Login extends Component {
   }
 
  renderLoginErrors= (error) => {
-  const view= this.state.error? <UncontrolledAlert  fade={true} style={{marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.message}</UncontrolledAlert >:''
+  const view= this.state.error? <UncontrolledAlert  fade={true} style={{marginLeft:'20%',marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.message}</UncontrolledAlert >:''
 
    return(<div>
     <p>{view}</p>
