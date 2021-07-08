@@ -3,9 +3,12 @@ import { Button, Form, FormGroup,  Input,UncontrolledAlert  } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
 import Spinner from "./Spinner";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
 
 import AuthService from "../services/AuthService";
 import {Card} from "reactstrap";
+import Signup from "./Signup";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +18,9 @@ class Login extends Component {
       loading: false,
       error:false,
       //loginErrorMessage:'Invalid Username or Password',
-      message:''
+      message:'',
+      open:true,
+      modal:false
 
     };
   }
@@ -50,6 +55,28 @@ class Login extends Component {
       password: e.target.value,
     });
   }
+   toggle = () => {
+     this.setState(
+       { 
+        open:!this.state.open
+        })}
+
+
+renderSignup =()=>{
+  return (
+    <div>
+      <Modal isOpen={this.state.open} toggle={this.toggle} >
+        <ModalHeader isOpen={this.state.open} toggle={this.toggle}>      
+        Join Movie Rental !   
+        </ModalHeader>
+        <ModalBody>
+        <Signup/>
+        </ModalBody>
+        
+      </Modal>
+    </div>
+  );
+}
 
  renderLoginErrors= (error) => {
   const view= this.state.error? <UncontrolledAlert  fade={true} style={{marginLeft:'20%',marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.message}</UncontrolledAlert >:''
@@ -103,7 +130,9 @@ class Login extends Component {
 
                 </Form>
                 <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
+                <p className="forgot" align="center"><a aria-label="register" href="/signup">Register</a></p>
                 {this.renderLoginErrors(this.state.error)}
+                {this.renderSignup()}
               </Card>
             </Col>
           </Row>

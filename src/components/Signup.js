@@ -12,6 +12,7 @@ class Signup extends Component {
       this.state = {
       username: "",
       password: "",
+      confirmPassword: "",
       loading: false,
       error:false,
       //loginErrorMessage:'Invalid Username or Password',
@@ -21,23 +22,23 @@ class Signup extends Component {
   }
 
    handleLogin = async(e) => {
-    e.preventDefault();
-    this.setState({
-      loading: true,
-    });
-    //await AuthService.createUser(this.state.username,this.state.password);
-    var loginStatus = await AuthService.login(this.state.username,this.state.password);
-    if(loginStatus.success)
-    {
-      this.props.history.push("/");
-      window.location.reload();
-      return;
-    }
-    this.setState({
-      loading: false,
-      error:true,
-      message:loginStatus.error
-    });
+    // e.preventDefault();
+    // this.setState({
+    //   loading: true,
+    // });
+    // //await AuthService.createUser(this.state.username,this.state.password);
+    // var loginStatus = await AuthService.login(this.state.username,this.state.password);
+    // if(loginStatus.success)
+    // {
+    //   this.props.history.push("/");
+    //   window.location.reload();
+    //   return;
+    // }
+    // this.setState({
+    //   loading: false,
+    //   error:true,
+    //   message:loginStatus.error
+    // });
   }
 
   onChangeUsername=(e)=>{
@@ -50,25 +51,22 @@ class Signup extends Component {
       password: e.target.value,
     });
   }
+  onChangeConfirmPassword=(e)=>{
+    this.setState({
+      confirmPassword: e.target.value,
+    });
+  }
 
- renderLoginErrors= (error) => {
-  const view= this.state.error? <UncontrolledAlert  fade={true} style={{marginLeft:'20%',marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.message}</UncontrolledAlert >:''
-
-   return(<div>
-    <p>{view}</p>
-  </div>);
- }
+ 
   render() {
     if (this.state.loading) return (<Spinner loading={this.state.loading}/>);
 
     return (
       <>
         <Container>
-          <Row style={{ marginTop: "20%" }}>
-            <Col sm="12" md={{ size: 6, offset: 3 }}>
-              <Card className="loginForm">
-              <img alt="logo" src="logo.png"></img>
-              <p className="sign" align="center">Sign in</p>
+          
+              <Card style={{border:'none'}}>
+              <img alt="logo" src="logo.png" style={{width:'50%',alignSelf:'center',paddingBottom:'2%'}}></img>
                 <Form onSubmit={this.handleLogin}>
                  
                   <FormGroup>
@@ -93,23 +91,31 @@ class Signup extends Component {
                       onChange={this.onChangePassword}
                     />
                   </FormGroup>
+                  <FormGroup>
+                    <Input
+                      type="password"
+                      name="password"
+                      id="pwd-cnfrm"
+                      placeholder="confirm password"
+                      aria-label="confirm password"
+                      className="un"
+                      onChange={this.onChangeConfirmPassword}
+                    />
+                  </FormGroup>
                   <Button
                     id="loginBtn"
                     aria-label="Login Button"
                     className="styledButton"
                   >
-                    Submit
+                    Sign up
                   </Button>
 
                 </Form>
-                <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
-                {this.renderLoginErrors(this.state.error)}
               </Card>
-            </Col>
-          </Row>
+         
         </Container>
       </>
     );
   }
 }
-export default withRouter(Signup);
+export default Signup;
