@@ -3,7 +3,7 @@ import { Button, Form, FormGroup,  Input,UncontrolledAlert  } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
 import Spinner from "./Spinner";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 
 import AuthService from "../services/AuthService";
