@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import QierPlayer from 'qier-player';
+//import QierPlayer from 'qier-player';
 import { UncontrolledAlert } from 'reactstrap';
 import Payment from "./Payment";
 
