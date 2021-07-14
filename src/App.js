@@ -9,6 +9,8 @@ import './custom.css'
 import AuthService from './services/AuthService';
 import { Player } from './components/Player';
 import Signup from './components/Signup';
+import 'react-credit-cards/es/styles-compiled.css';
+
 
 export default class App extends Component {
   static displayName = App.name;

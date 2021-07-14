@@ -86,8 +86,9 @@ renderSignup =()=>{
   </div>);
  }
  
- register =()=> 
+ register =(e)=> 
  {
+   e.preventDefault();
     this.setState({
       open:true
     });
@@ -138,7 +139,7 @@ renderSignup =()=>{
 
                 </Form>
                 <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
-                <p className="forgot" align="center" onClick={this.register}>New User ? Register  </p>
+                <p style={{paddingLeft:'50%'}}>New to Movie Rental ? <a  align="center" href="/" onClick={this.register}>Register  </a></p>
                 {this.renderLoginErrors(this.state.error)}
                 {this.renderSignup()}
               </Card>
