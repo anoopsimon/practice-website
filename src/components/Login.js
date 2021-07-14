@@ -1,101 +1,117 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup,  Input,UncontrolledAlert  } from "reactstrap";
+import { Button, Form, FormGroup, Input, UncontrolledAlert } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
 import Spinner from "./Spinner";
-import { Modal, ModalHeader, ModalBody } from 'reactstrap';
-
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 import AuthService from "../services/AuthService";
-import {Card} from "reactstrap";
+import { Card } from "reactstrap";
 import Signup from "./Signup";
 class Login extends Component {
   constructor(props) {
     super(props);
-      this.state = {
+    this.state = {
       username: "",
       password: "",
       loading: false,
-      error:false,
+      error: false,
       //loginErrorMessage:'Invalid Username or Password',
-      message:'',
-      open:false,
-      modal:false
-
+      message: "",
+      open: false,
+      modal: false,
     };
   }
 
-   handleLogin = async(e) => {
+  handleLogin = async (e) => {
     e.preventDefault();
     this.setState({
       loading: true,
     });
-    //await AuthService.createUser(this.state.username,this.state.password);
-    var loginStatus = await AuthService.login(this.state.username,this.state.password);
-    if(loginStatus.success)
-    {
+    var loginStatus = await AuthService.login(
+      this.state.username,
+      this.state.password
+    );
+    if (loginStatus.success) {
       this.props.history.push("/");
       window.location.reload();
       return;
     }
     this.setState({
       loading: false,
-      error:true,
-      message:loginStatus.error
+      error: true,
+      message: loginStatus.error,
     });
-  }
+  };
 
-  onChangeUsername=(e)=>{
-    this.setState({
-      username: e.target.value,
-    });
-  }
-  onChangePassword=(e)=>{
-    this.setState({
-      password: e.target.value,
-    });
-  }
-   toggle = () => {
-     this.setState(
-       { 
-        open:!this.state.open
-        })}
-
-
-renderSignup =()=>{
-  return (
-    <div>
-      <Modal isOpen={this.state.open} toggle={this.toggle} >
-        <ModalHeader style={{paddingLeft:'35%'}} isOpen={this.state.open} toggle={this.toggle}>      
-        Join Movie Rental 
-        </ModalHeader>
-        <ModalBody>
-        <Signup/>
-        </ModalBody>
-        
-      </Modal>
-    </div>
-  );
-}
-
- renderLoginErrors= (error) => {
-  const view= error? <UncontrolledAlert  fade={true} style={{marginLeft:'20%',marginTop:'5%',textAlign:'center',display:'inline',backgroundColor:'rgba(220, 53, 69, 0.9)',color:'white',borderRadius:'8px'}}>{this.state.message}</UncontrolledAlert >:''
-
-   return(<div>
-    <p>{view}</p>
-  </div>);
- }
  
- register =(e)=> 
- {
-   e.preventDefault();
+  toggle = () => {
     this.setState({
-      open:true
+      open: !this.state.open,
     });
- }
+  };
+
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    this.setState({ [name]: value });
+  };
+
+  renderSignup = () => {
+    return (
+      <div>
+        <Modal isOpen={this.state.open} toggle={this.toggle}>
+          <ModalHeader
+            style={{ paddingLeft: "35%" }}
+            isOpen={this.state.open}
+            toggle={this.toggle}
+          >
+            Join Movie Rental
+          </ModalHeader>
+          <ModalBody>
+            <Signup />
+          </ModalBody>
+        </Modal>
+      </div>
+    );
+  };
+
+  renderLoginErrors = (error) => {
+    const view = error ? (
+      <UncontrolledAlert
+        fade={true}
+        style={{
+          marginLeft: "20%",
+          marginTop: "5%",
+          textAlign: "center",
+          display: "inline",
+          backgroundColor: "rgba(220, 53, 69, 0.9)",
+          color: "white",
+          borderRadius: "8px",
+        }}
+      >
+        {this.state.message}
+      </UncontrolledAlert>
+    ) : (
+      ""
+    );
+
+    return (
+      <div>
+        <p>{view}</p>
+      </div>
+    );
+  };
+
+  register = (e) => {
+    e.preventDefault();
+    this.setState({
+      open: true,
+    });
+  };
 
   render() {
-    if (this.state.loading) return (<Spinner loading={this.state.loading}/>);
+    if (this.state.loading) return <Spinner loading={this.state.loading} />;
 
     return (
       <>
@@ -103,19 +119,20 @@ renderSignup =()=>{
           <Row style={{ marginTop: "10%" }}>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
               <Card className="loginForm">
-              <img alt="logo" src="logo.png"></img>
-              <p className="sign" align="center">Sign in</p>
+                <img alt="logo" src="logo.png"></img>
+                <p className="sign" align="center">
+                  Sign in
+                </p>
                 <Form onSubmit={this.handleLogin}>
-                 
                   <FormGroup>
                     <Input
                       type="email"
-                      name="email"
+                      name="username"
                       id="username"
                       placeholder="Username"
                       aria-label="username or email"
                       className="un"
-                      onChange={this.onChangeUsername}
+                      onChange={this.handleInputChange}
                     />
                   </FormGroup>
                   <FormGroup>
@@ -126,7 +143,7 @@ renderSignup =()=>{
                       placeholder="Password"
                       aria-label="password"
                       className="un"
-                      onChange={this.onChangePassword}
+                      onChange={this.handleInputChange}
                     />
                   </FormGroup>
                   <Button
@@ -136,11 +153,19 @@ renderSignup =()=>{
                   >
                     Submit
                   </Button>
-
                 </Form>
-                <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
-               <hr></hr>
-                <p style={{paddingLeft:'20%'}}>New to Movie Rental ? <a  align="center" href="/" onClick={this.register}>Register  </a></p>
+                <p className="forgot" align="center">
+                  <a aria-label="forgot password" href="/">
+                    Forgot Password?
+                  </a>
+                </p>
+                <hr></hr>
+                <p style={{ paddingLeft: "20%" }}>
+                  New to Movie Rental ?{" "}
+                  <a align="center" href="/" onClick={this.register}>
+                    Register{" "}
+                  </a>
+                </p>
                 {this.renderLoginErrors(this.state.error)}
                 {this.renderSignup()}
               </Card>

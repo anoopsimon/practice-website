@@ -112,7 +112,7 @@ class Signup extends Component {
                   <FormGroup>
                     <Input
                       type="password"
-                      name="password"
+                      name="confirmPassword"
                       id="pwd-cnfrm"
                       placeholder="confirm password"
                       aria-label="confirm password"
