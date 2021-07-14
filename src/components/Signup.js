@@ -45,8 +45,8 @@ class Signup extends Component {
       loading: true,
     });
     var registrationStatus = await AuthService.createUser(this.state.username,this.state.password);
-    //var loginStatus = await AuthService.login(this.state.username,this.state.password);
-    if(registrationStatus.success)
+    var loginStatus = await AuthService.login(this.state.username,this.state.password);
+    if(registrationStatus.success && loginStatus.success)
     {
       this.props.history.push("/");
       window.location.reload();
@@ -55,7 +55,7 @@ class Signup extends Component {
     this.setState({
       loading: false,
       error:true,
-      message:registrationStatus.error
+      message:registrationStatus.error + loginStatus.error
     });
   }
 
@@ -141,4 +141,4 @@ class Signup extends Component {
     );
   }
 }
-export default Signup;
+export default withRouter(Signup);

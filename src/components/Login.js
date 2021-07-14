@@ -19,7 +19,7 @@ class Login extends Component {
       error:false,
       //loginErrorMessage:'Invalid Username or Password',
       message:'',
-      open:true,
+      open:false,
       modal:false
 
     };
@@ -85,13 +85,21 @@ renderSignup =()=>{
     <p>{view}</p>
   </div>);
  }
+ 
+ register =()=> 
+ {
+    this.setState({
+      open:true
+    });
+ }
+
   render() {
     if (this.state.loading) return (<Spinner loading={this.state.loading}/>);
 
     return (
       <>
         <Container>
-          <Row style={{ marginTop: "20%" }}>
+          <Row style={{ marginTop: "10%" }}>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
               <Card className="loginForm">
               <img alt="logo" src="logo.png"></img>
@@ -130,7 +138,7 @@ renderSignup =()=>{
 
                 </Form>
                 <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
-                <p className="forgot" align="center"><a aria-label="register" href="/signup">Register</a></p>
+                <p className="forgot" align="center" onClick={this.register}>New User ? Register  </p>
                 {this.renderLoginErrors(this.state.error)}
                 {this.renderSignup()}
               </Card>
