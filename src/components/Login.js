@@ -139,7 +139,7 @@ renderSignup =()=>{
 
                 </Form>
                 <p className="forgot" align="center"><a aria-label="forgot password" href="/">Forgot Password?</a></p>
-                <p style={{paddingLeft:'50%'}}>New to Movie Rental ? <a  align="center" href="/" onClick={this.register}>Register  </a></p>
+                <p style={{paddingLeft:'20%'}}>New to Movie Rental ? <a  align="center" href="/" onClick={this.register}>Register  </a></p>
                 {this.renderLoginErrors(this.state.error)}
                 {this.renderSignup()}
               </Card>
