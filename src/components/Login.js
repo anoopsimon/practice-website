@@ -66,8 +66,8 @@ renderSignup =()=>{
   return (
     <div>
       <Modal isOpen={this.state.open} toggle={this.toggle} >
-        <ModalHeader isOpen={this.state.open} toggle={this.toggle}>      
-        Join Movie Rental !   
+        <ModalHeader style={{paddingLeft:'35%'}} isOpen={this.state.open} toggle={this.toggle}>      
+        Join Movie Rental 
         </ModalHeader>
         <ModalBody>
         <Signup/>
