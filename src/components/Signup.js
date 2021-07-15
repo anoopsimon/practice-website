@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input, UncontrolledAlert } from "reactstrap";
+import {  Form, FormGroup, Input, UncontrolledAlert } from "reactstrap";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router";
 import Spinner from "./Spinner";
 
 import AuthService from "../services/AuthService";
 import { Card } from "reactstrap";
+import StyledButton from "./lib/StyledButton";
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -150,13 +151,12 @@ class Signup extends Component {
                   onChange={this.handleInputChange}
                 />
               </FormGroup>
-              <Button
+                <StyledButton
                 id="loginBtn"
-                aria-label="Login Button"
-                className="styledButton"
-              >
-                Sign up
-              </Button>
+                ariaLabel="Login Button"
+                text="Register"
+              >                
+              </StyledButton> 
             </Form>
             {this.renderLoginErrors(this.state.isPasswordValid)}
           </Card>

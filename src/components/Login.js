@@ -8,6 +8,8 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import AuthService from "../services/AuthService";
 import { Card } from "reactstrap";
 import Signup from "./Signup";
+import StyledButton from "./lib/StyledButton";
+import TextBox from "./lib/TextBox";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -125,34 +127,32 @@ class Login extends Component {
                 </p>
                 <Form onSubmit={this.handleLogin}>
                   <FormGroup>
-                    <Input
+                    <TextBox
                       type="email"
                       name="username"
                       id="username"
                       placeholder="Username"
                       aria-label="username or email"
-                      className="textbox"
                       onChange={this.handleInputChange}
                     />
                   </FormGroup>
                   <FormGroup>
-                    <Input
+                    <TextBox
                       type="password"
                       name="password"
                       id="pwd"
                       placeholder="Password"
                       aria-label="password"
-                      className="textbox"
                       onChange={this.handleInputChange}
                     />
                   </FormGroup>
-                  <Button
+                  <StyledButton
                     id="loginBtn"
                     aria-label="Login Button"
-                    className="styledButton"
+                    text="Sign In"
                   >
-                    Submit
-                  </Button>
+                    
+                  </StyledButton>
                 </Form>
                 <p className="forgot" align="center">
                   <a aria-label="forgot password" href="/">
