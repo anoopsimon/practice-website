@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input, UncontrolledAlert } from "reactstrap";
+import {  Form, FormGroup,  UncontrolledAlert } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
-import Spinner from "./Spinner";
+import Spinner from "./lib/Spinner";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 import AuthService from "../services/AuthService";
 import { Card } from "reactstrap";
 import Signup from "./Signup";
+import StyledButton from "./lib/StyledButton";
+import TextBox from "./lib/TextBox";
+import HyperLink from "./lib/HyperLink";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -44,7 +47,6 @@ class Login extends Component {
     });
   };
 
- 
   toggle = () => {
     this.setState({
       open: !this.state.open,
@@ -125,46 +127,47 @@ class Login extends Component {
                 </p>
                 <Form onSubmit={this.handleLogin}>
                   <FormGroup>
-                    <Input
+                    <TextBox
                       type="email"
                       name="username"
                       id="username"
                       placeholder="Username"
                       aria-label="username or email"
-                      className="textbox"
                       onChange={this.handleInputChange}
                     />
                   </FormGroup>
                   <FormGroup>
-                    <Input
+                    <TextBox
                       type="password"
                       name="password"
                       id="pwd"
                       placeholder="Password"
                       aria-label="password"
-                      className="textbox"
                       onChange={this.handleInputChange}
                     />
                   </FormGroup>
-                  <Button
+                  <StyledButton
                     id="loginBtn"
                     aria-label="Login Button"
-                    className="styledButton"
-                  >
-                    Submit
-                  </Button>
+                    text="Sign In"
+                  ></StyledButton>
                 </Form>
                 <p className="forgot" align="center">
-                  <a aria-label="forgot password" href="/">
-                    Forgot Password?
-                  </a>
+                  <HyperLink
+                    ariaLabel="forgot password"
+                    href="/"
+                    linkText="Forgot Password?"
+                  />
                 </p>
                 <hr></hr>
                 <p style={{ paddingLeft: "20%" }}>
-                  New to Movie Rental ?{" "}
-                  <a align="center" href="/" onClick={this.register}>
-                    Register{" "}
-                  </a>
+                  New to Movie Rental ?
+                  <HyperLink
+                    href="/"
+                    onClick={this.register}
+                    linkText="Register"
+                    ariaLabel="register"
+                  />
                 </p>
                 {this.renderLoginErrors(this.state.error)}
                 {this.renderSignup()}
