@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Cards from "react-credit-cards";
 import { Container, Row, Col } from "reactstrap";
+import TextBox from "./lib/TextBox";
+
 export default class Payment extends Component {
   constructor(props) {
     super(props);
@@ -82,6 +84,8 @@ export default class Payment extends Component {
               </Row>
             </form>
           </Row>
+          <TextBox></TextBox>
+
         </Container>
       </div>
     );
