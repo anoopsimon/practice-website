@@ -21,7 +21,9 @@ export default class TextBox extends Component {
                   placeholder={this.props.placeholder}
                   aria-label={this.props.ariaLabel}
                   className={this.state.className}
-                 // onChange={this.props.handleChange}
+                  onChange={this.props.onChange}
+                  onFocus={this.props.onFocus}
+                  maxLength={this.props.maxLength}
                 /> 
             </>
         )

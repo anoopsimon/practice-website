@@ -12,6 +12,7 @@ export default class Payment extends Component {
       focus: "",
       name: "",
       number: "",
+      anoopsimon:''
     };
   }
 
@@ -21,7 +22,7 @@ export default class Payment extends Component {
 
   handleInputChange = (e) => {
     const { name, value } = e.target;
-
+    console.log(name + '>' + value);
     this.setState({ [name]: value });
   };
 
@@ -71,7 +72,7 @@ export default class Payment extends Component {
                   />
                 </Col>
                 <Col sm={{ size: "auto", offset: 0 }}>                  
-                  <input
+                  <TextBox
                     type="tel"
                     name="cvc"
                     placeholder="CVC"
@@ -84,7 +85,7 @@ export default class Payment extends Component {
               </Row>
             </form>
           </Row>
-          <TextBox></TextBox>
+          <TextBox placeholder='custom' name='anoopsimon' onChange={this.handleInputChange}></TextBox>
 
         </Container>
       </div>
