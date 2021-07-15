@@ -131,7 +131,7 @@ class Login extends Component {
                       id="username"
                       placeholder="Username"
                       aria-label="username or email"
-                      className="un"
+                      className="textbox"
                       onChange={this.handleInputChange}
                     />
                   </FormGroup>
@@ -142,7 +142,7 @@ class Login extends Component {
                       id="pwd"
                       placeholder="Password"
                       aria-label="password"
-                      className="un"
+                      className="textbox"
                       onChange={this.handleInputChange}
                     />
                   </FormGroup>

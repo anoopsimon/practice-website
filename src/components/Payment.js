@@ -45,7 +45,7 @@ export default class Payment extends Component {
                 placeholder="Card Number"
                 onChange={this.handleInputChange}
                 onFocus={this.handleInputFocus}
-                className="un"
+                className="textbox"
                 maxLength={16}
               />
               <input
@@ -54,7 +54,7 @@ export default class Payment extends Component {
                 placeholder="Name"
                 onChange={this.handleInputChange}
                 onFocus={this.handleInputFocus}
-                className="un"
+                className="textbox"
               />
               <Row>
                 <Col sm={{ size: "auto", offset: 0 }}>
@@ -64,7 +64,7 @@ export default class Payment extends Component {
                     placeholder="Valid Thru"
                     onChange={this.handleInputChange}
                     onFocus={this.handleInputFocus}
-                    className="un"
+                    className="textbox"
                     maxLength={5}
                   />
                 </Col>
@@ -75,7 +75,7 @@ export default class Payment extends Component {
                     placeholder="CVC"
                     onChange={this.handleInputChange}
                     onFocus={this.handleInputFocus}
-                    className="un"
+                    className="textbox"
                     maxLength={3}
                   />
                 </Col>

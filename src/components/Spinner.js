@@ -4,6 +4,7 @@
  * @modify date 2021-07-05 11:33:57
  * @desc A re -usable loader component
  */
+import { Alert } from "reactstrap";
 import React, { Component } from "react";
 import FadeLoader from "react-spinners/FadeLoader";
 
@@ -16,6 +17,15 @@ export default class Spinner extends Component {
     };
   }
 
+  alert = () => {
+    console.log('message => ' + this.props.message);
+    if(this.props.message!=null) 
+    {
+      return <Alert>{this.props.message}</Alert>;
+    }
+    
+  }
+
   render() {
     return (
       <>
@@ -24,9 +34,13 @@ export default class Spinner extends Component {
             color={this.state.color}
             loading={this.props.loading}
             size={this.state.size}
-          ></FadeLoader>
-        
+          >
+           
+          </FadeLoader>
+       
         </div>
+        {this.alert()}
+        
       </>
     );
   }

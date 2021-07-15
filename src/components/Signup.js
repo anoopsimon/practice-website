@@ -105,7 +105,7 @@ class Signup extends Component {
   };
 
   render() {
-    if (this.state.loading) return <Spinner loading={this.state.loading} />;
+    if (this.state.loading) return <Spinner message="Please wait. Your account is being created" loading={this.state.loading} />;
 
     return (
       <>
@@ -124,7 +124,7 @@ class Signup extends Component {
                   id="username"
                   placeholder="Username"
                   aria-label="username or email"
-                  className="un"
+                  className="textbox"
                   onChange={this.handleInputChange}
                 />
               </FormGroup>
@@ -135,7 +135,7 @@ class Signup extends Component {
                   id="pwd"
                   placeholder="Password"
                   aria-label="password"
-                  className="un"
+                  className="textbox"
                   onChange={this.handleInputChange}
                 />
               </FormGroup>
@@ -146,7 +146,7 @@ class Signup extends Component {
                   id="pwd-cnfrm"
                   placeholder="confirm password"
                   aria-label="confirm password"
-                  className="un"
+                  className="textbox"
                   onChange={this.handleInputChange}
                 />
               </FormGroup>
