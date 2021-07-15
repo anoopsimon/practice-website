@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-//import QierPlayer from 'qier-player';
+import QierPlayer from 'qier-player';
 import { UncontrolledAlert } from 'reactstrap';
-import Payment from "./Payment";
 
 export class Player extends Component {
   static displayName = Player.name;
@@ -49,9 +48,8 @@ export class Player extends Component {
       </UncontrolledAlert>
 
         <div style={{marginLeft:'auto',marginRight:'auto'}}>
-        {/* <QierPlayer style= {{margin:'auto'}} srcOrigin="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4" /> */}
+      <QierPlayer style= {{margin:'auto'}} srcOrigin="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4" />
 
-        <Payment></Payment>
         </div>
       </>
     );

@@ -133,6 +133,11 @@ html {
   margin-bottom: 3%;
 }
 
+#PaymentForm
+{
+  margin-top: 10%;
+  width: auto;
+}
 .textbox {
   width: 76%;
   color: rgb(38, 50, 56);
