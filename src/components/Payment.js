@@ -11,8 +11,7 @@ export default class Payment extends Component {
       expiry: "",
       focus: "",
       name: "",
-      number: "",
-      anoopsimon:''
+      number: ""
     };
   }
 
@@ -42,32 +41,29 @@ export default class Payment extends Component {
             </Col>
 
             <form>
-              <input
+              <TextBox
                 type="tel"
                 name="number"
                 placeholder="Card Number"
                 onChange={this.handleInputChange}
                 onFocus={this.handleInputFocus}
-                className="textbox"
                 maxLength={16}
               />
-              <input
+              <TextBox
                 type="tel"
                 name="name"
                 placeholder="Name"
                 onChange={this.handleInputChange}
                 onFocus={this.handleInputFocus}
-                className="textbox"
               />
               <Row>
                 <Col sm={{ size: "auto", offset: 0 }}>
-                  <input
+                  <TextBox
                     type="tel"
                     name="expiry"
                     placeholder="Valid Thru"
                     onChange={this.handleInputChange}
                     onFocus={this.handleInputFocus}
-                    className="textbox"
                     maxLength={5}
                   />
                 </Col>
@@ -78,14 +74,12 @@ export default class Payment extends Component {
                     placeholder="CVC"
                     onChange={this.handleInputChange}
                     onFocus={this.handleInputFocus}
-                    className="textbox"
                     maxLength={3}
                   />
                 </Col>
               </Row>
             </form>
           </Row>
-          <TextBox placeholder='custom' name='anoopsimon' onChange={this.handleInputChange}></TextBox>
 
         </Container>
       </div>
