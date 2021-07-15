@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {  Form, FormGroup, Input, UncontrolledAlert } from "reactstrap";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router";
-import Spinner from "./Spinner";
+import Spinner from "./lib/Spinner";
 
 import AuthService from "../services/AuthService";
 import { Card } from "reactstrap";

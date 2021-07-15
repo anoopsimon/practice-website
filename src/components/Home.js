@@ -5,7 +5,7 @@ import {
   CardTitle, CardSubtitle, Button,CardDeck
 } from 'reactstrap';
 import MoviesService from "../services/MoviesService";
-import Spinner from "./Spinner";
+import Spinner from "./lib/Spinner";
 export class Home extends Component {
   static displayName = Home.name;
 

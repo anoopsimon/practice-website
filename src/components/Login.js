@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {  Form, FormGroup,  UncontrolledAlert } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router";
-import Spinner from "./Spinner";
+import Spinner from "./lib/Spinner";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 import AuthService from "../services/AuthService";
