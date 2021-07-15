@@ -10,6 +10,7 @@ import { Card } from "reactstrap";
 import Signup from "./Signup";
 import StyledButton from "./lib/StyledButton";
 import TextBox from "./lib/TextBox";
+import HyperLink from "./lib/HyperLink";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +47,6 @@ class Login extends Component {
     });
   };
 
- 
   toggle = () => {
     this.setState({
       open: !this.state.open,
@@ -150,21 +150,24 @@ class Login extends Component {
                     id="loginBtn"
                     aria-label="Login Button"
                     text="Sign In"
-                  >
-                    
-                  </StyledButton>
+                  ></StyledButton>
                 </Form>
                 <p className="forgot" align="center">
-                  <a aria-label="forgot password" href="/">
-                    Forgot Password?
-                  </a>
+                  <HyperLink
+                    ariaLabel="forgot password"
+                    href="/"
+                    linkText="Forgot Password?"
+                  />
                 </p>
                 <hr></hr>
                 <p style={{ paddingLeft: "20%" }}>
-                  New to Movie Rental ?{" "}
-                  <a align="center" href="/" onClick={this.register}>
-                    Register{" "}
-                  </a>
+                  New to Movie Rental ?
+                  <HyperLink
+                    href="/"
+                    onClick={this.register}
+                    linkText="Register"
+                    ariaLabel="register"
+                  />
                 </p>
                 {this.renderLoginErrors(this.state.error)}
                 {this.renderSignup()}
