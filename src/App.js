@@ -10,6 +10,7 @@ import AuthService from './services/AuthService';
 import { Player } from './components/Player';
 import Signup from './components/Signup';
 import 'react-credit-cards/es/styles-compiled.css';
+import MyAccount from './components/MyAccount';
 
 
 export default class App extends Component {
@@ -51,6 +52,7 @@ export default class App extends Component {
         <Route path='/login' component={Login} />
         <Route path='/player' component={Player} />
         <Route path='/signup' component={Signup} />
+        <Route path='/myaccount' component={MyAccount} />
         </Switch>
       </Layout>
     );

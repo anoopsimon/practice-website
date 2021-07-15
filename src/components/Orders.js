@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Table } from "reactstrap";
 import StarRatings from "react-star-ratings";
 import {  Card } from "reactstrap";
-import Spinner from "./Spinner";
+import Spinner from "./lib/Spinner";
 import MoviesService from "../services/MoviesService";
 
 export class Orders extends Component {
