@@ -7,6 +7,7 @@ import Spinner from "./Spinner";
 import AuthService from "../services/AuthService";
 import { Card } from "reactstrap";
 import StyledButton from "./lib/StyledButton";
+import TextBox from "./lib/TextBox";
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -119,35 +120,32 @@ class Signup extends Component {
             ></img>
             <Form onSubmit={this.handleRegistration}>
               <FormGroup>
-                <Input
+                <TextBox
                   type="email"
                   name="username"
                   id="username"
                   placeholder="Username"
                   aria-label="username or email"
-                  className="textbox"
                   onChange={this.handleInputChange}
                 />
               </FormGroup>
               <FormGroup>
-                <Input
+                <TextBox
                   type="password"
                   name="password"
                   id="pwd"
                   placeholder="Password"
                   aria-label="password"
-                  className="textbox"
                   onChange={this.handleInputChange}
                 />
               </FormGroup>
               <FormGroup>
-                <Input
+                <TextBox
                   type="password"
                   name="confirmPassword"
                   id="pwd-cnfrm"
                   placeholder="confirm password"
                   aria-label="confirm password"
-                  className="textbox"
                   onChange={this.handleInputChange}
                 />
               </FormGroup>
